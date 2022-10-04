@@ -5,7 +5,7 @@ module.exports = defineConfig({
     port: 8080,
     open: true,
     client: {
-      webSocketURL: 'ws://0.0.0.0:8080/ws',
+      webSocketURL: 'ws://0.0.0.0:8082/ws',
     },
   },
 })

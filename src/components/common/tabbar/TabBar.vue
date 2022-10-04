@@ -16,10 +16,13 @@ export default {
     align-items: center;
     height: 49px;
     width: 100%;
+    max-width: 750px;
     background-color: #f6f6f6;
 
     position: fixed;
     bottom: 0;
+
+
 
     box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.2);
 

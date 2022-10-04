@@ -26,6 +26,11 @@ const routes = [
         path: "/shopcar",
         component: () => import('../pages/shopcar/ShopcarMode.vue'),
         meta: { title: "购物车" }
+    },
+    {
+        path: "/detail/:id",
+        component: () => import('../pages/detail/detailMode.vue'),
+        meta: { title: "商品详情" }
     }
 ]
 

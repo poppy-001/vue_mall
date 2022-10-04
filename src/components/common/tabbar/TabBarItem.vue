@@ -1,5 +1,5 @@
 <template>
-    <div class="tab_bar_item" @click="handleActive">
+    <div class="tab_bar_item" @click="handleActive(path)">
         <div v-if="!isActive">
             <slot name="item-icon"></slot>
         </div>
@@ -15,11 +15,6 @@
 <script>
 export default {
     name: "TabBarItem",
-    mounted() {
-        if (this.path == '/home') {
-            this.handleActive()
-        }
-    },
     props: {
         path: String,
         activeColor: {
@@ -28,8 +23,8 @@ export default {
         }
     },
     methods: {
-        handleActive() {
-            this.$router.replace(this.path)
+        handleActive(path) {
+            this.$router.replace(path).catch(err => err)
         }
     },
     computed: {

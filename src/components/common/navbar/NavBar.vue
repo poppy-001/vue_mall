@@ -20,11 +20,19 @@ export default {
 
 <style lang="less" scoped>
 .nav_bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     height: 44px;
+    width: 100%;
+    z-index: 99;
     line-height: 44px;
     text-align: center;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    max-width: 750px;
+    margin: auto;
 
 }
 
