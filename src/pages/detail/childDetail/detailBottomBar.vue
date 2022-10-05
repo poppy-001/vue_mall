@@ -25,9 +25,10 @@
 <script>
 export default {
     name: "detailBottomBar",
-    methods:{
-        addCart(){
+    methods: {
+        addCart() {
             this.$emit("addcart")
+            this.$toast.show("成功加入购物车", 1500)
         }
     }
 }

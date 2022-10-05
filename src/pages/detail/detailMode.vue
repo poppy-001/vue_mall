@@ -18,7 +18,7 @@
 
 <script>
 import { getGoodDetail, getRecommend } from '@/network/detail'
-
+import { mapState } from 'vuex'
 
 import Scroll from '@/components/common/scroll/Scroll.vue'
 import { backTop } from '@/utils/mixin'
@@ -61,6 +61,9 @@ export default {
     destroyed() {
         this.$bus.$off("refresh", this.refresh)
     },
+    computed: {
+        ...mapState(["cartList"])
+    },
     methods: {
         async getGoodDetail() {
             const { data: res } = await getGoodDetail(this.iid);
@@ -71,6 +74,7 @@ export default {
                 title: data.itemInfo.title,
                 desc: data.itemInfo.desc,
                 newPrice: data.itemInfo.price,
+                lowPrice: data.itemInfo.lowNowPrice,
                 oldPrice: data.itemInfo.oldPrice,
                 discount: data.itemInfo.discountDesc,
                 discountBgColor: data.itemInfo.discountBgColor,
@@ -141,8 +145,15 @@ export default {
         },
 
         //添加商品
-        addcart(){
-            
+        addcart() {
+            const buyGoods = {}
+            buyGoods.image = this.topImages[0]
+            buyGoods.title = this.goodsInfo.title;
+            buyGoods.desc = this.goodsInfo.desc;
+            buyGoods.price = this.goodsInfo.lowPrice;
+            buyGoods.iid = this.iid
+            buyGoods.ischeck = false
+            this.$store.dispatch("addCart", buyGoods)
         }
 
     },
@@ -151,7 +162,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .detail {
     position: absolute;
     height: 100vh;

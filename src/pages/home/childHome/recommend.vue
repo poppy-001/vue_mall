@@ -23,7 +23,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" scoped>
 .recommend {
     display: flex;
     width: 100%;
