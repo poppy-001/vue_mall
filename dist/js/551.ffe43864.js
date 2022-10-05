@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkvue_mall"]=self["webpackChunkvue_mall"]||[]).push([[551],{1551:function(e,l,u){u.r(l),u.d(l,{default:function(){return c}});var n=function(){var e=this,l=e._self._c;return l("div",[e._v(" 我的 ")])},r=[],t={name:"ProfileMode"},a=t,f=u(1001),s=(0,f.Z)(a,n,r,!1,null,null,null),c=s.exports}}]);
+//# sourceMappingURL=551.ffe43864.js.map
