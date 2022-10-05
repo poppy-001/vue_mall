@@ -9,7 +9,7 @@
         <div v-for="(item,index) in goodDesc.detailImage" :key="index">
             <div class="info_key">{{item.key}}</div>
             <div class="info_list">
-                <img v-for="(item1,index) in item.list" :key="index" :src="item1"
+                <img v-for="(item1,index) in item.list" :key="index" v-lazy="item1"
                     @load="imgLoad(index,item.list.length)">
             </div>
         </div>
